@@ -1,30 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <CookiesModal/>
+  
+  <!-- <h1>{{ $t('message') }}</h1> -->
+  <nav><NavView/></nav>
+  <router-view></router-view>
+  <footer><FooterView/></footer>
 </template>
 
+<script>
+import NavView from './components/NavView.vue'
+import FooterView from './components/FooterView.vue'
+import CookiesModal from './components/modals/cookiesModal.vue';
+
+
+export default {
+  name: 'App',
+  components: {
+    NavView,
+    FooterView,
+    CookiesModal
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
